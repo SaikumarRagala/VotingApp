@@ -1,0 +1,40 @@
+extends layout
+
+block content  
+  link#bootstrap-css(href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css', rel='stylesheet')
+  script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js')
+  script(src='//code.jquery.com/jquery-1.11.1.min.js')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  .container
+    .row
+      .col-md-9
+        .panel.panel-primary
+          .panel-heading
+            h3.panel-title
+              span.glyphicon.glyphicon-circle-arrow-right
+              | Which technology can lead the industry in coming years?
+          .panel-body.two-col
+            .row
+              .col-md-12  
+                .well.well-sm.margin-bottom-none
+                  form.form-signin(role='form', action='/voting', method='post')
+                    label
+                      input(type='radio', name = 'tech', value='AR')
+                      | Argumented Reality
+                    br
+                    label
+                      input(type='radio', name = 'tech', value='serverless')
+                      | Serverless
+                    br
+                    label
+                      input(type='radio', name = 'tech', value='ML')
+                      | Machine Learning
+                    br
+                    label
+                      input(type='radio', name = 'tech', value='Blockchain')
+                      | Blockchain
+                    br
+                    .panel-footer
+                      button.btn.btn-lg.btn-primary.btn-block(type='submit')
+                        span.glyphicon.glyphicon-ok
+                        | Vote
